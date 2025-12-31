@@ -9,24 +9,14 @@
   
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/legend-title-style.css">
-  <!-- HTML2 Canvas Code: Enables Screenshots -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>Time Table</title>
+  <title>Hourly Data</title>
 </head>
 <body>
-  <div class = "super-section">
-    <button class="previous-week">
-      <img src="images/left-arrow.png" class="left-arrow-img">
-      <p class="tool-tip">Previous Week</p>
-    </button>
-    <button class="next-week">
-      <img src="images/right-arrow.png" class="right-arrow-img">
-      <p class="tool-tip">Next Week</p>
-    </button>
+  <div section="table">
     <div class = "body-grid-container generate-days">
       <script src = "https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
       <script src = "../src/scripts/generateDays.js"></script>
-      <script src = "../src/scripts/screenshot.js"></script>
     </div>
     <div class="subject-header">
       <p class="subject-tracker-text">Focus Hours:</p>
@@ -35,9 +25,7 @@
     </div>
     <div class = "subjects-information"></div>
     <script src="../src/scripts/script.js"></script>
-
-    <iframe src="focus-hours.html" style="width: 100%; height: 600px; border: none;"></iframe>
-
+    
   </div>
 </body>
 </html>
