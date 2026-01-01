@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/legend-title-style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Hourly Data</title>
+</head>
+<body className="grid gap-9 py-5 w-80% bg-white
+                 @media (min-width: 1251px) {grid-template-columns: repeat(4, 1fr)}
+                 @media (max-width: 12500px) {grid-templage-columns: 1fr 1fr}">
+  <div section="timetable" className="p-0 10vw">
+    <div className="grid {grid-template-columns: repeat(24, 1fr)} gap-[5px] m-5 mt-[10px] ml-0">
+      <script src = "https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+      <script src = "../src/scripts/generateDays.js"></script>
+    </div>
+    <div className="grid grid-template-columns:65px 40px auto pb-[20px]"></div>
+  </div>
+</body>
+</html>
