@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import React from 'react';
+import WeekHours from '../components/WeekHours';
 
-function TimeTable() {
+export default function TimeTable() {
   return (
     <section className="grid gap-9 py-5 w-80% bg-white
         @media (min-width: 1251px) {grid-template-columns: repeat(4, 1fr)}
         @media (max-width: 12500px) {grid-templage-columns: 1fr 1fr}">
-      <div className="grid {grid-template-columns: repeat(24, 1fr)} gap-[5px] m-5 mt-[10px] ml-0">
-
-      </div>
+      
+        <p>Day Hours Here</p>
+   
+      <WeekHours />
     </section>
   )
 }
-
-export default TimeTable;
