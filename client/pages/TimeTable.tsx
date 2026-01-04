@@ -6,10 +6,8 @@ export default function TimeTable() {
     <section className="grid gap-9 py-5 w-80% bg-white
         @media (min-width: 1251px) {grid-template-columns: repeat(4, 1fr)}
         @media (max-width: 12500px) {grid-templage-columns: 1fr 1fr}">
-      
-        <p>Day Hours Here</p>
-   
-      <WeekHours />
+        <p>Time Table</p>
+        <WeekHours />
     </section>
   )
 }

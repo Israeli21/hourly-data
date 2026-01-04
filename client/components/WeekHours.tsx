@@ -20,19 +20,35 @@ export default function WeekHours() {
       {days.map((day, dayIndex) => (
         <div key={dayIndex} style={{ marginBottom: '30px' }}>
           <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>{day}</h3>
-          <div style={{ display: 'flex', gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
-            {Array.from({ length: 24 }, (_, hourIndex) => (
-              <div 
-                key={hourIndex} 
-                style={boxStyle}
-                className="box"
-                title={`${day} - ${hourIndex}:00`}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
-              >
-                <span style={{ fontSize: '12px' }}>{hourIndex}</span>
-              </div>
-            ))}
+          <div style={{ display: 'flex', gap: '5px' }}>
+            <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
+              {Array.from({ length: 14 }, (_, hourIndex) => (
+                <div 
+                  key={hourIndex} 
+                  style={boxStyle}
+                  className="box"
+                  title={`${day} - ${hourIndex}:00`}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
+                >
+                  <span style={{ fontSize: '12px' }}>{hourIndex}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
+              {Array.from({ length: 14 }, (_, hourIndex) => (
+                <div 
+                  key={hourIndex} 
+                  style={boxStyle}
+                  className="box"
+                  title={`${day} - ${hourIndex}:00`}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
+                >
+                  <span style={{ fontSize: '12px' }}>{hourIndex}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ))}
