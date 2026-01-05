@@ -5,7 +5,7 @@ export default function WeekHours() {
   
   const boxStyle = {
     width: '40px',
-    height: '50px',
+    height: '22px',
     border: '2px solid #333',
     backgroundColor: '#e5e7eb',
     display: 'flex',
@@ -20,9 +20,9 @@ export default function WeekHours() {
       {days.map((day, dayIndex) => (
         <div key={dayIndex} style={{ marginBottom: '30px' }}>
           <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>{day}</h3>
-          <div style={{ display: 'flex', gap: '5px' }}>
+          <div style={{ display: 'flex', gap: '28px', paddingLeft: '28px' }}>
             <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
-              {Array.from({ length: 14 }, (_, hourIndex) => (
+              {Array.from({ length: 12 }, (_, hourIndex) => (
                 <div 
                   key={hourIndex} 
                   style={boxStyle}
@@ -36,7 +36,7 @@ export default function WeekHours() {
               ))}
             </div>
             <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
-              {Array.from({ length: 14 }, (_, hourIndex) => (
+              {Array.from({ length: 12 }, (_, hourIndex) => (
                 <div 
                   key={hourIndex} 
                   style={boxStyle}
