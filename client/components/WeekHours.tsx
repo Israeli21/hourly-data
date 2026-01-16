@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default function WeekHours() {
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   
   const boxStyle = {
-    width: '60px',
-    height: '22px',
+    width: '75px',
+    height: '30px',
     border: '2px solid #333',
     backgroundColor: '#e5e7eb',
     display: 'flex',
@@ -16,10 +16,10 @@ export default function WeekHours() {
   };
   
   return (
-    <div style={{ padding: '20px', display: 'flex', flexDirection: 'row'}}>
+    <div style={{ padding: '20px', display: 'flex', flexDirection: 'row' }}>
       {days.map((day, dayIndex) => (
         <div key={dayIndex} style={{ marginBottom: '30px'}}>
-          <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>{day}</h3>
+          <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>{day}</h3>
           <div style={{ display: 'flex', gap: '28px'}}>
             <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
               {Array.from({ length: 24 }, (_, hourIndex) => (
