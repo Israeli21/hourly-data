@@ -4,10 +4,10 @@ export default function WeekHours() {
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   
   const boxStyle = {
-    width: '75px',
+    width: '100px',
     height: '30px',
-    border: '2px solid #333',
-    backgroundColor: '#e5e7eb',
+    border: '1px solid #333',
+    backgroundColor: '#ffffff',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
