@@ -4,7 +4,7 @@ export default function WeekHours() {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   
   const boxStyle = {
-    width: '40px',
+    width: '60px',
     height: '22px',
     border: '2px solid #333',
     backgroundColor: '#e5e7eb',
@@ -16,27 +16,13 @@ export default function WeekHours() {
   };
   
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: '20px', display: 'flex', flexDirection: 'row'}}>
       {days.map((day, dayIndex) => (
-        <div key={dayIndex} style={{ marginBottom: '30px' }}>
+        <div key={dayIndex} style={{ marginBottom: '30px'}}>
           <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>{day}</h3>
-          <div style={{ display: 'flex', gap: '28px', paddingLeft: '28px' }}>
+          <div style={{ display: 'flex', gap: '28px'}}>
             <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
-              {Array.from({ length: 12 }, (_, hourIndex) => (
-                <div 
-                  key={hourIndex} 
-                  style={boxStyle}
-                  className="box"
-                  title={`${day} - ${hourIndex}:00`}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
-                >
-                  <span style={{ fontSize: '12px' }}>{hourIndex}</span>
-                </div>
-              ))}
-            </div>
-            <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
-              {Array.from({ length: 12 }, (_, hourIndex) => (
+              {Array.from({ length: 24 }, (_, hourIndex) => (
                 <div 
                   key={hourIndex} 
                   style={boxStyle}
