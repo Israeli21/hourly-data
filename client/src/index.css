@@ -22,3 +22,28 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.4s ease-out;
 }
+
+.subject-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  padding-bottom: 8px;
+  gap: 12px;
+}
+
+.subject-label {
+  font-size: 18px;
+}
+
+.button-box {
+  border: 2px solid #777777;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 12px;
+  width: 170px;
+}
+
+.button-box img {
+  width: 30px;
+}
