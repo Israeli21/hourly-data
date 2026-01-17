@@ -14,7 +14,8 @@ export default function SideBar() {
     textAlign: 'center', 
     cursor: 'pointer', 
     marginTop: '12px', 
-    width: '170px'};
+    width: '240px',
+    fontWeight: 'bold',};
 
   const subjectDiv = {
     display: 'flex', 
@@ -31,17 +32,17 @@ export default function SideBar() {
     textAlign: 'center', 
     cursor: 'pointer', 
     marginTop: '12px', 
-    width: '170px', 
+    width: '240px', 
     display: 'flex', 
     flexDirection: 'row', 
     alignItems: 'center',
-    gap: "5px"
+    gap: "10px", fontWeight: 'bold',
   }
 
   return (
-    <div>
-      <h1>Hourly Data</h1>
-      <h3>Subjects:</h3>
+    <div style={{ position: 'fixed', padding: '20px', width: '250px', fontFamily: 'Arial, sans-serif', backgroundColor: 'white'}}>
+      <h1 style={{fontSize: '40px', marginBottom: '20px'}}>Hourly Data</h1>
+      <h3 style={{marginTop: '0px'}}>Subjects:</h3>
       <div style={subjectDiv}>
         <div style={{...boxSize, backgroundColor: "#535353"}} className="box"></div>
         <span style={{marginLeft: '12px', fontSize: '18px'}}>Sleep</span>
@@ -75,11 +76,11 @@ export default function SideBar() {
         + Add Subject
       </div>
       <div style={buttonDiv}>
-        <img src="/graph.png" style={{width: "30px", paddingLeft: "20px"}}/>
+        <img src="/graph.png" style={{width: "30px", paddingLeft: "45px"}}/>
         <p>View Analytics</p>
       </div>
       <div style={buttonDiv}>
-        <img src="/event.png" style={{width: "30px", paddingLeft: "20px"}}/>
+        <img src="/event.png" style={{width: "30px", paddingLeft: "50px"}}/>
         <p>Add Event</p>
       </div>
     </div>

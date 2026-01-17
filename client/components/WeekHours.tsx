@@ -12,11 +12,11 @@ export default function WeekHours() {
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    flexShrink: 0
+    flexShrink: 0,
   };
   
   return (
-    <div style={{ padding: '20px', display: 'flex', flexDirection: 'row' }}>
+    <div style={{ padding: '20px', display: 'flex', flexDirection: 'row', paddingLeft: '330px' }}>
       {days.map((day, dayIndex) => (
         <div key={dayIndex} style={{ marginBottom: '30px'}}>
           <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>{day}</h3>
@@ -28,8 +28,8 @@ export default function WeekHours() {
                   style={boxStyle}
                   className="box"
                   title={`${day} - ${hourIndex}:00`}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
+                  // onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
+                  // onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
                 >
                   <span style={{ fontSize: '12px' }}>{hourIndex}</span>
                 </div>
