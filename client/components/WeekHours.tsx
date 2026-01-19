@@ -28,8 +28,8 @@ export default function WeekHours() {
                   style={boxStyle}
                   className="box"
                   title={`${day} - ${hourIndex}:00`}
-                  // onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
-                  // onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#e5e7eb'}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
                 >
                   <span style={{ fontSize: '12px' }}>{hourIndex}</span>
                 </div>

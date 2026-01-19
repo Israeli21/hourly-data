@@ -42,34 +42,36 @@ export default function SideBar() {
   return (
     <div style={{ position: 'fixed', padding: '20px', width: '250px', fontFamily: 'Arial, sans-serif', backgroundColor: 'white'}}>
       <h1 style={{fontSize: '40px', marginBottom: '20px'}}>Hourly Data</h1>
-      <h3 style={{marginTop: '0px'}}>Subjects:</h3>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#535353"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>Sleep</span>
-      </div>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#aef6ff"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>Social</span>
-      </div>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#4444a5"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>University</span>
-      </div>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#2a05ff"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>Computer Science</span>
-      </div>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#fc0000"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>Art</span>
-      </div>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#14db02"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>Exercise</span>
-      </div>
-      <div style={subjectDiv}>
-        <div style={{...boxSize, backgroundColor: "#a97d3b"}} className="box"></div>
-        <span style={{marginLeft: '12px', fontSize: '18px'}}>Organization</span>
+      <div style={{marginLeft: '10px'}}>
+        <h3 style={{marginTop: '0px'}}>Subjects:</h3>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#535353"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>Sleep</span>
+        </div>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#aef6ff"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>Social</span>
+        </div>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#4444a5"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>University</span>
+        </div>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#2a05ff"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>Computer Science</span>
+        </div>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#fc0000"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>Art</span>
+        </div>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#14db02"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>Exercise</span>
+        </div>
+        <div style={subjectDiv}>
+          <div style={{...boxSize, backgroundColor: "#a97d3b"}} className="box"></div>
+          <span style={{marginLeft: '12px', fontSize: '18px'}}>Organization</span>
+        </div>
       </div>
 
       <div style={addSubject}>
