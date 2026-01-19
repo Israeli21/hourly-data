@@ -1,4 +1,5 @@
 import React from 'react';
+import { Menu } from 'lucide-react';
 
 export default function SideBar() {
   const boxSize = { 
@@ -40,9 +41,13 @@ export default function SideBar() {
   }
 
   return (
-    <div style={{ position: 'fixed', padding: '20px', width: '250px', fontFamily: 'Arial, sans-serif', backgroundColor: 'white'}}>
-      <h1 style={{fontSize: '40px', marginBottom: '20px'}}>Hourly Data</h1>
-      <div style={{marginLeft: '10px'}}>
+    <div style={{ position: 'fixed', padding: '20px', width: '270px', fontFamily: 'Arial, sans-serif', backgroundColor: 'white'}}>
+      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+        <Menu style={{width: "30px", height: "30px"}}/>
+        <h1 style={{fontSize: '40px', marginBottom: '20px'}}>Hourly Data</h1>
+      </div>
+
+      <div style={{marginLeft: '40px'}}>
         <h3 style={{marginTop: '0px'}}>Subjects:</h3>
         <div style={subjectDiv}>
           <div style={{...boxSize, backgroundColor: "#535353"}} className="box"></div>
@@ -74,16 +79,18 @@ export default function SideBar() {
         </div>
       </div>
 
-      <div style={addSubject}>
-        + Add Subject
-      </div>
-      <div style={buttonDiv}>
-        <img src="/graph.png" style={{width: "30px", paddingLeft: "45px"}}/>
-        <p>View Analytics</p>
-      </div>
-      <div style={buttonDiv}>
-        <img src="/event.png" style={{width: "30px", paddingLeft: "50px"}}/>
-        <p>Add Event</p>
+      <div style={{marginLeft: '20px'}}>
+        <div style={addSubject}>
+          + Add Subject
+        </div>
+        <div style={buttonDiv}>
+          <img src="/graph.png" style={{width: "30px", paddingLeft: "45px"}}/>
+          <p>View Analytics</p>
+        </div>
+        <div style={buttonDiv}>
+          <img src="/event.png" style={{width: "30px", paddingLeft: "50px"}}/>
+          <p>Add Event</p>
+        </div>
       </div>
     </div>
   )
