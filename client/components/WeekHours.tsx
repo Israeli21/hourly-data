@@ -1,7 +1,17 @@
 import React from 'react';
+import dayjs from 'dayjs';
 
 export default function WeekHours() {
-  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  const days = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  const startDate = dayjs('2026-01-17');
+
+  const today = dayjs();
+  const deliveryDate = today.format('DD');
+
+  const daysSinceStart = today.diff(startDate, "day");      // Total days passed since start
+  const weeksSinceStart = Math.floor(daysSinceStart / 7);   // How many full weeks have passed
+  const currentWeekStart = startDate.add(weeksSinceStart * 7, "day");
   
   const boxStyle = {
     width: '100px',
@@ -14,12 +24,22 @@ export default function WeekHours() {
     cursor: 'pointer',
     flexShrink: 0,
   };
+
+  const dayLabel = {
+    fontSize: '18px', 
+    fontWeight: 'bold', 
+    marginBottom: '10px', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    display: 'flex'
+  }
   
   return (
     <div style={{ padding: '20px', display: 'flex', flexDirection: 'row', paddingLeft: '330px' }}>
       {days.map((day, dayIndex) => (
         <div key={dayIndex} style={{ marginBottom: '30px'}}>
-          <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>{day}</h3>
+          <h3 style={dayLabel}>{day}</h3>
+          <h3 style={dayLabel}>{currentWeekStart.add(dayIndex, "day").format('MMM DD')}</h3>
           <div style={{ display: 'flex', gap: '28px'}}>
             <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
               {Array.from({ length: 24 }, (_, hourIndex) => (

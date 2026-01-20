@@ -16,7 +16,9 @@ export default function SideBar() {
     cursor: 'pointer', 
     marginTop: '12px', 
     width: '240px',
-    fontWeight: 'bold',};
+    fontWeight: 'bold',
+    boxShadow: '5px 3px 3px rgba(0, 0, 0, 0.1)',
+    borderRadius: '4px',};
 
   const subjectDiv = {
     display: 'flex', 
@@ -38,6 +40,8 @@ export default function SideBar() {
     flexDirection: 'row', 
     alignItems: 'center',
     gap: "10px", fontWeight: 'bold',
+    boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.1)',
+    borderRadius: '4px',
   }
 
   return (
@@ -86,6 +90,10 @@ export default function SideBar() {
         <div style={buttonDiv}>
           <img src="/graph.png" style={{width: "30px", paddingLeft: "45px"}}/>
           <p>View Analytics</p>
+        </div>
+        <div style={buttonDiv}>
+          <img src="/routine.png" style={{width: "30px", paddingLeft: "47px"}}/>
+          <p>Edit Routine</p>
         </div>
         <div style={buttonDiv}>
           <img src="/event.png" style={{width: "30px", paddingLeft: "50px"}}/>
