@@ -51,33 +51,35 @@ export default function SideBar() {
         <h1 style={{fontSize: '40px', marginBottom: '20px'}}>Hourly Data</h1>
       </div>
 
+
+
       <div style={{marginLeft: '40px'}}>
         <h3 style={{marginTop: '0px'}}>Subjects:</h3>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#535353"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>Sleep</span>
         </div>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#aef6ff"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>Social</span>
         </div>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#4444a5"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>University</span>
         </div>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#2a05ff"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>Computer Science</span>
         </div>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#fc0000"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>Art</span>
         </div>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#14db02"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>Exercise</span>
         </div>
-        <div style={subjectDiv}>
+        <div className="flex flex-row items-center pb-[8px]">
           <div style={{...boxSize, backgroundColor: "#a97d3b"}} className="box"></div>
           <span style={{marginLeft: '12px', fontSize: '18px'}}>Organization</span>
         </div>

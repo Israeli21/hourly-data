@@ -5,8 +5,8 @@ import SideBar from '../components/SideBar';
 
 export default function TimeTable() {
   return (
-    <section className="">
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <section>
+        <div className="flex flex-row">
           <SideBar />
           <WeekHours />
         </div>
