@@ -13,45 +13,26 @@ export default function WeekHours() {
   const weeksSinceStart = Math.floor(daysSinceStart / 7);   // How many full weeks have passed
   const currentWeekStart = startDate.add(weeksSinceStart * 7, "day");
   
-  const boxStyle = {
-    width: '100px',
-    height: '30px',
-    border: '1px solid #333',
-    backgroundColor: '#ffffff',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    flexShrink: 0,
-  };
-
-  const dayLabel = {
-    fontSize: '18px', 
-    fontWeight: 'bold', 
-    marginBottom: '10px', 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    display: 'flex'
-  }
-  
   return (
-    <div style={{ padding: '20px', display: 'flex', flexDirection: 'row', paddingLeft: '330px' }}>
+    <div className="flex flex-row p-[20px] pl-[330px]">
       {days.map((day, dayIndex) => (
-        <div key={dayIndex} style={{ marginBottom: '30px'}}>
-          <h3 style={dayLabel}>{day}</h3>
-          <h3 style={dayLabel}>{currentWeekStart.add(dayIndex, "day").format('MMM DD')}</h3>
-          <div style={{ display: 'flex', gap: '28px'}}>
-            <div style={{ gap: '4px', flexWrap: 'nowrap', overflowX: 'auto' }}>
+        <div key={dayIndex} className="mb-[30px]">
+          <div className="">
+            <h3  className="text-[18px] font-bold mb-[10px] justify-center items-center flex">{day}</h3>
+            <h3  className="text-[18px] font-bold mb-[10px] justify-center items-center flex">{currentWeekStart.add(dayIndex, "day").format('MMM DD')}</h3>
+          </div>
+
+          <div className="flex gap-[28px]">
+            <div className="gap-[28px] flex-nowrap overflow-x-auto">
               {Array.from({ length: 24 }, (_, hourIndex) => (
-                <div 
+                <div
                   key={hourIndex} 
-                  style={boxStyle}
-                  className="box"
+                  className="w-[100px] h-[30px] border border-solid border-[#333333] flex items-center justify-center cursor-pointer"
                   title={`${day} - ${hourIndex}:00`}
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#93c5fd'}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
                 >
-                  <span style={{ fontSize: '12px' }}>{hourIndex}</span>
+                  <span className="text-[12px]">{hourIndex}</span>
                 </div>
               ))}
             </div>
