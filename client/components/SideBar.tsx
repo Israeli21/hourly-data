@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import HourColors, { Subject } from './HourColors';
 import { Users } from 'lucide-react';
+import { Page } from './TopBar';
 
 const defaultSubjects: Subject[] = [
   { name: 'Erase', color: '#ffffff' },
@@ -43,9 +44,10 @@ const colorThemes = [
 type SideBarProps = {
   selectedSubject: Subject | null;
   onSelectSubject: (subject: Subject) => void;
+  onChangePage: (page: Page) => void;
 };
 
-export default function SideBar({ selectedSubject, onSelectSubject }: SideBarProps) {
+export default function SideBar({ selectedSubject, onSelectSubject, onChangePage }: SideBarProps) {
   const [subjects, setSubjects] = useState<Subject[]>([{ name: 'Erase', color: '#ffffff' }, ...defaultSubjects]);
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [newSubjectName, setNewSubjectName] = useState('');
@@ -137,6 +139,7 @@ export default function SideBar({ selectedSubject, onSelectSubject }: SideBarPro
           </div>
           <button
             type="button"
+            onClick={() => onChangePage('routine')}
             className="grid grid-cols-4 border border-[2px] border-solid border-[#777777] p-[10px] text-center cursor-pointer mt-[12px] w-[240px] font-bold shadow-[5px_3px_3px_rgba(0,0,0,0.1)] rounded-[4px] hover:bg-gray-100"
           >
             <p className="col-span-3 mx-auto mix-blend-multiply ml-[2px] mt-[4px]">Edit Routine
@@ -144,6 +147,7 @@ export default function SideBar({ selectedSubject, onSelectSubject }: SideBarPro
           </button>
           <button
             type="button"
+            onClick={() => onChangePage('tenK')}
             className="grid grid-cols-4 border border-[2px] border-solid border-[#777777] p-[10px] text-center cursor-pointer mt-[12px] w-[240px] font-bold shadow-[5px_3px_3px_rgba(0,0,0,0.1)] rounded-[4px] hover:bg-gray-100"
           >
             <p className="col-span-3 mx-auto mix-blend-multiply ml-[2px] mt-[4px]">10K Challenge

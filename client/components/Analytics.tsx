@@ -70,7 +70,11 @@ const PortalTooltip = ({ active, payload, label, coordinate, chartId }: any) => 
   return createPortal(tooltipContent, document.body);
 }
 
-export default function Analytics() {
+type AnalyticsProps = {
+  onChangePage: (page: 'tasks') => void;
+};
+
+export default function Analytics({ onChangePage }: AnalyticsProps) {
   const [isOpen, setIsOpen] = useState(true);
   const [isExpandedOpen, setIsExpandedOpen] = useState(false);
   const [trendData, setTrendData] = useState<WeeklyTrendData[]>([]);
@@ -204,7 +208,10 @@ export default function Analytics() {
               <img src="/graph.png" className="w-[30px] h-[30px] mr-[2px] object-contain"/>
               <h2 className="text-[22px] font-bold">Analytics</h2>
             </div>
-            <div className="flex flex-row items-center gap-2">
+            <div
+              className="flex flex-row items-center gap-2 cursor-pointer hover:opacity-70"
+              onClick={() => onChangePage('tasks')}
+            >
               <img src="/graph.png" className="w-[30px] h-[30px] mr-[2px] object-contain"/>
               <h2 className="text-[22px] font-bold">Task Master</h2>
             </div>
