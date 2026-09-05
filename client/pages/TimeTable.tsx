@@ -27,7 +27,7 @@ export default function TimeTable() {
           onChangeWeekOffset={setWeekOffset}
           currentWeekStart={currentWeekStart}
         />
-        <div className="flex flex-row mt-[80px]">
+        <div className="flex flex-row">
           <SideBar
             selectedSubject={selectedSubject}
             onSelectSubject={setSelectedSubject}
