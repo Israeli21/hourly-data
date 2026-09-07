@@ -70,12 +70,9 @@ const PortalTooltip = ({ active, payload, label, coordinate, chartId }: any) => 
   return createPortal(tooltipContent, document.body);
 }
 
-type AnalyticsProps = {
-  onChangePage: (page: 'tasks') => void;
-};
-
-export default function Analytics({ onChangePage }: AnalyticsProps) {
+export default function Analytics() {
   const [isOpen, setIsOpen] = useState(true);
+  const [activeTab, setActiveTab] = useState<'analytics' | 'tasks'>('analytics');
   const [isExpandedOpen, setIsExpandedOpen] = useState(false);
   const [trendData, setTrendData] = useState<WeeklyTrendData[]>([]);
   const [breakdownData, setBreakdownData] = useState<WeeklyBreakdownData[]>([]);
@@ -204,20 +201,28 @@ export default function Analytics({ onChangePage }: AnalyticsProps) {
           className="w-[380px] h-[calc(100vh-40px)] flex-shrink-0 bg-gray-100 p-[20px] py-[15px] overflow-y-auto"
         >
           <div className="flex flex-row items-center gap-8 mb-[12px]">
-            <div className="flex flex-row items-center gap-2">
+            <div
+              className={`flex flex-row items-center gap-2 cursor-pointer ${activeTab === 'analytics' ? '' : 'opacity-50 hover:opacity-80'}`}
+              onClick={() => setActiveTab('analytics')}
+            >
               <img src="/graph.png" className="w-[30px] h-[30px] mr-[2px] object-contain"/>
               <h2 className="text-[22px] font-bold">Analytics</h2>
             </div>
             <div
-              className="flex flex-row items-center gap-2 cursor-pointer hover:opacity-70"
-              onClick={() => onChangePage('tasks')}
+              className={`flex flex-row items-center gap-2 cursor-pointer ${activeTab === 'tasks' ? '' : 'opacity-50 hover:opacity-80'}`}
+              onClick={() => setActiveTab('tasks')}
             >
               <img src="/graph.png" className="w-[30px] h-[30px] mr-[2px] object-contain"/>
               <h2 className="text-[22px] font-bold">Task Master</h2>
             </div>
           </div>
 
-          {loading ? (
+          {activeTab === 'tasks' ? (
+            <div className="text-center py-[40px] text-gray-600">
+              <p className="font-semibold">Task Master</p>
+              <p className="text-[14px]">Coming soon.</p>
+            </div>
+          ) : loading ? (
             <div className="text-center py-[40px] text-gray-600">Loading analytics...</div>
           ) : (
             <>

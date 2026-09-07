@@ -49,14 +49,8 @@ export default function TimeTable() {
                 <p className="text-[14px] text-gray-600">Coming soon.</p>
               </div>
             )}
-            {activePage === 'tasks' && (
-              <div>
-                <h2 className="text-[24px] font-bold">Task Master</h2>
-                <p className="text-[14px] text-gray-600">Coming soon.</p>
-              </div>
-            )}
           </div>
-          {activePage === 'timetable' && <Analytics onChangePage={setActivePage} />}
+          <Analytics />
         </div>
     </section>
   )

@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Dayjs } from 'dayjs';
 import { Dispatch, SetStateAction } from 'react';
 
-export type Page = 'timetable' | 'routine' | 'tenK' | 'tasks';
+export type Page = 'timetable' | 'routine' | 'tenK';
 
 type TopBarProps = {
   activePage: Page;
