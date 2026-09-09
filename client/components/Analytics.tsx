@@ -77,14 +77,13 @@ export default function Analytics() {
   const [trendData, setTrendData] = useState<WeeklyTrendData[]>([]);
   const [breakdownData, setBreakdownData] = useState<WeeklyBreakdownData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [hoveredWeek, setHoveredWeek] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
         setLoading(true);
         
-        // Fetch both analytics endpoints
+        // Fetch extra weeks so the boundary week isn't truncated, then keep only the last 4 complete weeks
         const [trendRes, breakdownRes] = await Promise.all([
           fetch('/api/analytics/weekly-trend?weeks=8'),
           fetch('/api/analytics/weekly-breakdown?weeks=8')
@@ -93,9 +92,17 @@ export default function Analytics() {
         if (trendRes.ok && breakdownRes.ok) {
           const trendJson = await trendRes.json();
           const breakdownJson = await breakdownRes.json();
-          
-          setTrendData(trendJson.data || []);
-          setBreakdownData(breakdownJson.data || []);
+
+          const recentWeeks = (items: Array<{ weekStart: string }>) =>
+            Array.from(new Set(items.map((item) => item.weekStart)))
+              .sort()
+              .slice(-4);
+
+          const trendWeeks = new Set(recentWeeks(trendJson.data || []));
+          const breakdownWeeks = new Set(recentWeeks(breakdownJson.data || []));
+
+          setTrendData((trendJson.data || []).filter((item: WeeklyTrendData) => trendWeeks.has(item.weekStart)));
+          setBreakdownData((breakdownJson.data || []).filter((item: WeeklyBreakdownData) => breakdownWeeks.has(item.weekStart)));
         }
       } catch (error) {
         console.error('Failed to fetch analytics:', error);
@@ -233,8 +240,6 @@ export default function Analytics() {
                   <LineChart
                     data={lineChartData()}
                     margin={{ top: 5, right: 5, left: 5, bottom: 20 }}
-                    onMouseMove={(state) => setHoveredWeek(state.activeLabel != null ? String(state.activeLabel) : null)}
-                    onMouseLeave={() => setHoveredWeek(null)}
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="week" style={{ fontSize: '12px' }} padding={{ left: 20, right: 20 }} />
